@@ -1,6 +1,4 @@
 defmodule SpacePhoenixWeb.Router do
-  alias SpacePhoenixWeb.CoheteController
-  alias SpacePhoenixWeb.AstronautaController
   use SpacePhoenixWeb, :router
 
   pipeline :api do

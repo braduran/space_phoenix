@@ -26,3 +26,6 @@ mix phx.gen.json Astronautas Astronauta astronautas cohete_id:references:cohetes
 ``mix phx.routes``
 8. Ejecutar la aplicación
 ``mix phx.server o  iex -S mix phx.server``
+
+### Pruebas
+Abrir el archivo space.jmx desde JMeter para hacer pruebas a los servicios 
