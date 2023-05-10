@@ -22,7 +22,8 @@ defmodule SpacePhoenixWeb.AstronautaJSON do
       nombre: astronauta.nombre,
       apellido: astronauta.apellido,
       fecha_nac: astronauta.fecha_nac,
-      lanzamientos: astronauta.lanzamientos
+      lanzamientos: astronauta.lanzamientos,
+      cohete_id: astronauta.cohete_id
     }
   end
 end

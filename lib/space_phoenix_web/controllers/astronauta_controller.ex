@@ -40,4 +40,9 @@ defmodule SpacePhoenixWeb.AstronautaController do
       send_resp(conn, :no_content, "")
     end
   end
+
+  def query_greater_equal_launch(conn, %{"launch" => launch}) do
+    astronautas = Astronautas.query_greater_equal_launch_astronautas(String.to_integer(launch))
+    render(conn, :index, astronautas: astronautas)
+  end
 end

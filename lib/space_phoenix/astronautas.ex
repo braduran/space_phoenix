@@ -89,6 +89,11 @@ defmodule SpacePhoenix.Astronautas do
     Repo.delete(astronauta)
   end
 
+  def query_greater_equal_launch_astronautas(num_launch) when is_integer(num_launch)  do
+    query = from(a in Astronauta, where: a.lanzamientos >= ^num_launch)
+    Repo.all(query)
+  end
+
   @doc """
   Returns an `%Ecto.Changeset{}` for tracking astronauta changes.
 

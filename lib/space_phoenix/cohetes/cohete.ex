@@ -11,6 +11,7 @@ defmodule SpacePhoenix.Cohetes.Cohete do
     field :marca, :string
     field :num_ref, :string
     field :peso, :string
+    has_many :astronauta, SpacePhoenix.Astronautas.Astronauta
 
     timestamps()
   end

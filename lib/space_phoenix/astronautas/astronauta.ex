@@ -10,7 +10,8 @@ defmodule SpacePhoenix.Astronautas.Astronauta do
     field :lanzamientos, :integer
     field :nombre, :string
     field :num_id, :integer
-    field :cohete_id, :binary_id
+    #field :cohete_id, :binary_id
+    belongs_to :cohete, SpacePhoenix.Cohetes.Cohete
 
     timestamps()
   end
@@ -18,7 +19,7 @@ defmodule SpacePhoenix.Astronautas.Astronauta do
   @doc false
   def changeset(astronauta, attrs) do
     astronauta
-    |> cast(attrs, [:num_id, :nombre, :apellido, :fecha_nac, :lanzamientos])
+    |> cast(attrs, [:num_id, :nombre, :apellido, :fecha_nac, :lanzamientos, :cohete_id])
     |> validate_required([:num_id, :nombre, :apellido, :fecha_nac, :lanzamientos])
   end
 end
