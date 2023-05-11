@@ -26,4 +26,8 @@ defmodule SpacePhoenixWeb.CoheteJSON do
       fecha_lanzamiento: cohete.fecha_lanzamiento
     }
   end
+
+  def show_cohete_id(%{cohete_id: cohete_id}) do
+    %{cohete_id: cohete_id, message: "Cohetes y astronautas guardados correctamente"}
+  end
 end

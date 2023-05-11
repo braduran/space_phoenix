@@ -15,7 +15,8 @@ defmodule SpacePhoenixWeb.Router do
     resources "/astronautas", AstronautaController, except: [:edit, :new, :update]
     put "/astronautas/:id", AstronautaController, :update
 
-    #Operaciones definidas por mi
+    #Obtener astronautas con lanzamientos mayor o igual a
     get "/astronautas/lanzamientos/:launch", AstronautaController, :query_greater_equal_launch
+    post "/cohetes/astronautas", CoheteController, :create_all
   end
 end

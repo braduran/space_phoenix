@@ -125,7 +125,7 @@
           <stringProp name="HTTPSampler.port">4000</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/api/cohetes/9e4a1d4f-9b80-466f-8ce3-ef801778ae4e</stringProp>
+          <stringProp name="HTTPSampler.path">/api/cohetes/swded</stringProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -253,7 +253,7 @@
           <stringProp name="HTTPSampler.port">4000</stringProp>
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/api/astronautas/d9ef519e-a889-40f9-82e1-6c0e69804056</stringProp>
+          <stringProp name="HTTPSampler.path">/api/astronautas/e65eeb6d-b25a-48e1-8184-977f69c5e774</stringProp>
           <stringProp name="HTTPSampler.method">DELETE</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -283,7 +283,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="List astronautas lanzamientos" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="List astronautas lanzamientos" enabled="false">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="Variables definidas por el Usuario" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -302,6 +302,65 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
         </HTTPSamplerProxy>
         <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create all" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+	&quot;cohete&quot;: {&#xd;
+		&quot;num_ref&quot;: &quot;15BR8A&quot;,&#xd;
+		&quot;marca&quot;: &quot;NASA Light&quot;,&#xd;
+		&quot;peso&quot;: &quot;100T&quot;,&#xd;
+		&quot;altura&quot;: &quot;500M&quot;,&#xd;
+		&quot;capacidad&quot;: 10,&#xd;
+		&quot;fecha_lanzamiento&quot;: &quot;2018-02-17&quot;,&#xd;
+		&quot;astronautas&quot;: [{&#xd;
+			&quot;num_id&quot;: &quot;6080&quot;,&#xd;
+			&quot;nombre&quot;: &quot;Jeff&quot;,&#xd;
+			&quot;apellido&quot;: &quot;Bezos&quot;,&#xd;
+			&quot;fecha_nac&quot;: &quot;1980-05-14&quot;,&#xd;
+			&quot;lanzamientos&quot;: 1&#xd;
+		},&#xd;
+		{&#xd;
+			&quot;num_id&quot;: &quot;6081&quot;,&#xd;
+			&quot;nombre&quot;: &quot;Mark&quot;,&#xd;
+			&quot;apellido&quot;: &quot;Zukerberg&quot;,&#xd;
+			&quot;fecha_nac&quot;: &quot;1990-01-01&quot;,&#xd;
+			&quot;lanzamientos&quot;: 1&#xd;
+		}]&#xd;
+	}&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">4000</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/api/cohetes/astronautas</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Gestor de Cabecera HTTP" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="Ver Árbol de Resultados" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
