@@ -4,7 +4,6 @@ defmodule SpacePhoenixWeb.CoheteController do
   alias SpacePhoenix.Cohetes
   alias SpacePhoenix.Cohetes.Cohete
   alias SpacePhoenix.Astronautas
-  alias SpacePhoenix.Astronautas.Astronauta
 
   action_fallback SpacePhoenixWeb.FallbackController
 
