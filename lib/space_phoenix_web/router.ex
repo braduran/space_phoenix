@@ -18,5 +18,6 @@ defmodule SpacePhoenixWeb.Router do
     #Obtener astronautas con lanzamientos mayor o igual a
     get "/astronautas/lanzamientos/:launch", AstronautaController, :query_greater_equal_launch
     post "/cohetes/astronautas", CoheteController, :create_all
+    get "/cohetes/marca/:cohete_brand", CoheteController, :quey_like_brand
   end
 end

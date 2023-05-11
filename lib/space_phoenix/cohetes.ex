@@ -102,4 +102,9 @@ defmodule SpacePhoenix.Cohetes do
     Cohete.changeset(cohete, attrs)
   end
 
+  def query_like_brand_cohetes(cohete_brand)  do
+    like_cohete = "%#{cohete_brand}%"
+    from(c in Cohete, where: ilike(c.marca, ^like_cohete)) |> Repo.all
+  end
+
 end

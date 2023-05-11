@@ -51,6 +51,11 @@ defmodule SpacePhoenixWeb.CoheteController do
     render(conn, :show_cohete_id, cohete_id: cohete_created.id)
   end
 
+  def quey_like_brand(conn, %{"cohete_brand" => cohete_brand}) do
+    cohetes = Cohetes.query_like_brand_cohetes(cohete_brand)
+    render(conn, :index, cohetes: cohetes)
+  end
+
   def save_astronauta(astronauta, _) when astronauta == [] do
     "Guardar Astronautas finalizado"
   end
